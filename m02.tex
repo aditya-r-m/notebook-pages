@@ -1,0 +1,46 @@
+hl|tc|Groups, Rings, and Fields
+\( \text{Definition 2.1.} \) A Group is a set \(G\) equipped with a binary operation \( (\cdot) : G \times G \rightarrow G \) that associates an element \( a \cdot b \in G \ \forall \ a, b \in G \) such that,
+li| \( \text{G1. Associativity} : \ a \cdot (b \cdot c) = (a \cdot b) \cdot c \ \ \forall a,b,c \in G \)
+li| \( \text{G2. Identity : } \exists e \mid a \cdot e = a = e \cdot a \ \ \forall a \in G \)
+li| \( \text{G3. Inverse : } \exists a^{-1} \mid a \cdot a^{-1} = e = a^{-1} \cdot a \ \ \forall a \in G\)
+A group is called commutative (or abelian) if \( a \cdot b = b \cdot a \ \ \forall a,b \in G \).
+A set \(M\) with an operation \( (\cdot) : M \times M \rightarrow M \) which satisfies (G1,G2) is called a Monoid.
+\( \text{Example 2.1.}\)
+li| \( (Z, +) \) is a commutative group, but \( (Z, \times) \) is a monoid.
+li| \( (Q, +) \) & \( (Q - \{0\}, \times) \) are commutative groups.
+li| The set of bijections (permutations) \( f : S \rightarrow S \) & composition operation \( (\circ) \) is called the Symmetric Group of degree \(|S|\) (& order \(n!\)).
+li| \( (Z/mZ, +) \) is a commutative group, & the set of integers coprime to \(m\) form a commutative group under mutliplication which is often represented as \( (Z/mZ)^\times \)
+li| The set of invertible \(n \times n\) metrices forms a group under matrix multiplication, which is known as general linear group, \( GL(n, R) \), \( GL(n, C) \), etc. When restricted to matrices with determinant \(1\), the structure is called special linear group, \( SL(n, R) \), \( SL(n, C) \), etc. Linear groups of matrices \(Q\) with real coefficients such that \( Q Q^T = Q^T Q = I \) are called general & special orthogonal groups & are represented by \( O(n), SO(n) \) respectively.
+It is customary to denote abelian group operation by \(+\) & inverse as \( -a \) for any element \( a \in G\).
+\( \text{Proposition 2.1.} \) For a Monoid \( (M, \cdot) \), left-identity must be the same as right-identity.
+tc| \( (e' \cdot a = a \ \forall \ a \in M) \land (a \cdot e'' = a \ \forall \ a \in M) \implies e' = e' \cdot e'' = e'' \)
+\( \text{Proposition 2.2.} \) For a Monoid \( (M, \cdot) \), left-inverse must be the same as right-inverse, if either exists for a given element.
+tc| \( (a' \cdot a = e) \land (a \cdot a'' = e) \implies a' = a' \cdot e = a' \cdot (a \cdot a'') = (a' \cdot a) \cdot a'' = e \cdot a'' = a'' \)
+\( \text{Proposition 2.3.} \) For a Monoid \( (M, \cdot) \), if we have two invertible elements \(\{a,b\}\), then \( (a \cdot b) \) is also invertible.
+tc| \( (a \cdot b) \cdot (b^{-1} \cdot a^{-1}) = a \cdot (b \cdot b^{-1}) \cdot a^{-1} = e \implies (a \cdot b)^{-1} = b^{-1} \cdot a^{-1} \)
+\( \text{Definition 2.2.} \) If a group \(G\) has \(n\) elements, we say that group \(G\) is of order \(n\). If a group has finite order, it is often represented as \(|G|\).
+For any two subsets \( R,S \subseteq G\), we let \( RS = \{ r \cdot s \ | \ r \in R, s \in S \} \). If \( R = \{g\} \), we write \( gS = \{ g \cdot s \ | \ s \in S \} \). If \( S = \{ g \} \), we write \( Rg = \{ r \cdot g \ | \ r \in R \} \).
+\( \text{Definition 2.3.} \) Let \(g \in G\) be an element of the group. We define the left & right translations by \(g\) as \(L_g(a) = g \cdot a, \ R_g(a) = a \cdot g \ \ \forall a \in G \).
+\( \text{Proposition 2.4.} \) For an element \(g \in G\), \( L_g \) & \( R_g \) are bijections.
+li| Injectivity : \( L_g(a) = L_g(b) \implies g \cdot a = g \cdot b \implies g^{-1} \cdot a = g^{-1} \cdot b \implies a = b \ \ \forall a, b \in G \)
+li| Surjectivity : \( L_g(g^{-1} \cdot a) = b \ \ \forall b \in G \)
+The order of elements in the above proof for \( L_g \) can be reversed to prove bijectivity of \(R_g\).
+\( \text{Definition 2.4.} \) Given a group \( (G, \cdot) \), a subset \( H \subseteq G \) with operation \((\cdot)\) is called a subgroup iff
+li| \( e \in H \)
+li| \( h^{-1} \in H \ \ \forall h \in H \)
+li| \( h_1 \cdot h_2 \in H \ \ \forall h_1,h_2\in H \)
+\( \text{Proposition 2.5.} \) Given a group \( (G, \cdot) \), a subset \( H \subseteq G \) forms a subgroup iff \(H\) is non-empty and the following property holds,
+tc| \( h_1, h_2 \in H \implies h_1 \cdot h_2^{-1} \in H \)
+li| \( h_1 = h_2 = h \implies h \cdot h^{-1} = e \in H \)
+li| \( h_1 = e, \ h_2 = h \implies h^{-1} \in H \ \ \forall h \in H \)
+li| \( h1, h_2 \in H \implies h_1, h_2^{-1} \in H \implies h_1 \cdot h_2 \in H \ \ \forall h_1, h_2 \in H \)
+\( \text{Proposition 2.6.} \) For a finite Group \( (G, \cdot) \), a subset \( H \subseteq G \) is called a subgroup \( H \leq G \) iff \( e \in H \) and \( H \) is closed under multiplication.
+This proposition holds because these two properties imply the existence of inverse for all elements of a finite subgroup. For a given element \( a \in H \), We know that \( L_a \) to \( H \) is bijective (Proposition 2.4). Due to closure under multiplication, we can see that \( L_a(H) \subseteq H \). The restriction of \( L_a \) to \( H \) must then be injective. Since \( H \) is finite, \( L_a \) over \( H \) must be bijective. Since \( e \in H \), we must have a unique \( b \) such that \( L_a(b) = e = a \cdot b \). Considering that \(L_a\) is injective, \( a \cdot a^{-1} = e \land a \cdot b = e \implies a^{-1} = b \).
+Note that \( L_a \) restricted to \( H \) is not necessarily bijective for infinite groups. For one such counter-example, consider restriction of \( L_1 \) from \( (Z, +) \) to \( (W, +) \).
+\( \text{Example 2.2.} \)
+li| \( nZ = \{ \ nk \ | \ k \in Z \ \} < Z \)
+li| \( GL^+(n, R) = \{ A \ | \ A \in GL(n, R), \ det(A) > 0 \ \} < GL(n, R) \)
+li| \( SO(n, R) < [ \ SL(n, R), O(n, R) \ ] < GL(n, R) \)
+li| \( SO(n, R) < SO(n+1, R) \)
+li| The set of invertible (upper or lower) triangular matrices forms a subgroup of \( GL(n, R) \)
+li| Klein four-group : \( V = \langle a, b \ | \ a^2 = b^2 = (ab)^2 = e \rangle < GL(2, R) \)
