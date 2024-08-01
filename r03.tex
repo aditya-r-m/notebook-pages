@@ -7,7 +7,7 @@ tc| \( p(s', r \ | \ s, a) = Pr\{S_t = s', R_t = r \ | \ S_{t-1} = s, A_{t - 1} 
 tc| \( \sum_{s' \in \mathcal{S}} \sum_{r \in \mathcal{R}} \ p(s', r \ | \ s, a) = 1 \ \forall s \in \mathcal{S}, a \in \mathcal{A} \)
 On the basis of the dynamics functions, we can compute anything we want to know about the environment, such as state transition probabilities or expected rewards,
 tc| \( p(s' \ | \ s, a) =Pr\{ S_t = s' \ | \ S_{t-1} = s, A_{t-1} = a \} = \sum_{r \in \mathcal{R}} \ p(s', r \ | \ s, a) \)
-tc| \( r(s, a) = E[R_t \ | \ S_{t-1} = s, A_{t-1} = a] = \sum_{r \in \mathcal{R}} \ r \sum_{s' \in \mathcal{S}} p(s', r \ | \ s,a) \)
+tc| \( r(s, a) = E[R_t \ | \ S_{t-1} = s, A_{t-1} = a] = \sum_{r \in \mathcal{R}} \ r \sum_{s' \in \mathcal{S}} \ p(s', r \ | \ s,a) \)
 tc| \( r(s, a, s') = E[R_t | S_{t-1} = s, A_{t-1} = a, S_t = s'] = \sum_{r \in \mathcal{R}} \ r \frac{p(s', \ r \ | \ s, a)}{p(s' \ | \ s, a)} \)
 The return is defined as \( G_t = \sum_{k=0}^\infty \gamma^k R_{t + 1 + k} = R_{t+1} + \gamma G_{t+1} \) with the discount factor \( \gamma \in [0,1] \).
 The tasks may be continuous or episodic. The representation can still be kept common for both because (a) episodes don't need to be distinguished from each other for MDPs (b) A final absorbing state with 0 further rewards can be added to represent finite episodes as continuous tasks. In episodic case, the return will be well defined even with \( \gamma = 1 \) which is not true for continuous tasks.
